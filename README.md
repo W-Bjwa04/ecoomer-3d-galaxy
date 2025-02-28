@@ -1,4 +1,5 @@
-# Welcome to your Lovable project
+# Welcome to E Commerce
+
 
 ## Project info
 
