@@ -20,14 +20,14 @@ export interface Product {
 export const products: Product[] = [
   {
     id: "1",
-    name: "Artisan Chocolate Truffle Box",
-    description: "Handcrafted chocolate truffles with various gourmet fillings in an elegant gift box.",
+    name: "Organic Chocolate Assortment",
+    description: "Premium assorted chocolates made with organic cacao and natural ingredients.",
     price: 24.99,
-    category: "Desserts",
+    category: "Confectionery",
     image: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    modelPath: "/models/chocolate_box.glb", // Replace with your actual model path
+    modelPath: "/models/chocolate_box.glb", // Place your model in public/models/
     details: [
-      "12 premium truffles",
+      "12 premium chocolates",
       "100% organic cacao",
       "No artificial ingredients",
       "Gluten-free option available"
@@ -42,12 +42,12 @@ export const products: Product[] = [
   },
   {
     id: "2",
-    name: "Sourdough Artisan Bread",
-    description: "Slow-fermented sourdough bread made with organic flour and traditional methods.",
+    name: "Artisanal Sourdough Bread",
+    description: "Freshly baked sourdough bread made with organic flour and traditional methods.",
     price: 8.99,
     category: "Bakery",
     image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    modelPath: "/models/bread.glb", // Replace with your actual model path
+    modelPath: "/models/bread.glb", // Place your model in public/models/
     details: [
       "24-hour fermentation",
       "Stone-baked",
@@ -64,12 +64,12 @@ export const products: Product[] = [
   },
   {
     id: "3",
-    name: "Premium Cheese Selection",
-    description: "Curated selection of artisanal cheeses from small-batch producers around the world.",
+    name: "Gourmet Cheese Selection",
+    description: "Hand-selected premium cheeses from small farms and artisanal producers.",
     price: 32.50,
     category: "Dairy",
     image: "https://images.unsplash.com/photo-1452195100486-9cc805987862?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    modelPath: "/models/cheese.glb", // Replace with your actual model path
+    modelPath: "/models/cheese.glb", // Place your model in public/models/
     details: [
       "4 different varieties",
       "Includes pairing guide",
@@ -86,12 +86,12 @@ export const products: Product[] = [
   },
   {
     id: "4",
-    name: "Organic Berry Mix",
-    description: "Fresh, seasonal organic berries packaged at peak ripeness for maximum flavor.",
+    name: "Fresh Organic Berry Mix",
+    description: "Seasonal organic berries, freshly picked and carefully packaged for maximum freshness.",
     price: 6.99,
-    category: "Fruits",
+    category: "Produce",
     image: "https://images.unsplash.com/photo-1596591868231-05e678c7c130?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    modelPath: "/models/berries.glb", // Replace with your actual model path
+    modelPath: "/models/berries.glb", // Place your model in public/models/
     details: [
       "Strawberries, blueberries, raspberries",
       "Pesticide-free",
@@ -108,39 +108,39 @@ export const products: Product[] = [
   },
   {
     id: "5",
-    name: "Gourmet Olive Oil Set",
-    description: "Collection of cold-pressed extra virgin olive oils from Mediterranean groves.",
-    price: 45.00,
+    name: "Premium Extra Virgin Olive Oil",
+    description: "Cold-pressed extra virgin olive oil from Mediterranean olive groves.",
+    price: 18.50,
     category: "Pantry",
     image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    modelPath: "/models/oil_bottles.glb", // Replace with your actual model path
+    modelPath: "/models/oil_bottle.glb", // Place your model in public/models/
     details: [
-      "3 varieties: Mild, Medium, Robust",
-      "First cold pressing only",
+      "First cold pressed",
       "Acidity level < 0.3%",
-      "Sealed glass bottles"
+      "Robust flavor profile",
+      "Glass bottle for freshness"
     ],
     material: "100% extra virgin olive oil",
     dimensions: {
-      width: 30,
-      height: 20,
-      depth: 10,
+      width: 8,
+      height: 25,
+      depth: 8,
       unit: "cm"
     }
   },
   {
     id: "6",
-    name: "Macarons Gift Box",
-    description: "Delicate French macarons in assorted flavors, beautifully presented in a luxury gift box.",
+    name: "Gourmet Macaron Collection",
+    description: "Authentic French macarons in assorted flavors, made with premium ingredients.",
     price: 28.99,
-    category: "Desserts",
+    category: "Bakery",
     image: "https://images.unsplash.com/photo-1558326567-98ae2405596b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    modelPath: "/models/macarons.glb", // Replace with your actual model path
+    modelPath: "/models/macarons.glb", // Place your model in public/models/
     details: [
       "12 macarons, 6 flavors",
       "Made with almond flour",
       "Natural colorings only",
-      "48-hour resting period for perfect texture"
+      "Perfect texture and flavor"
     ],
     material: "Almond flour, egg whites, sugar",
     dimensions: {

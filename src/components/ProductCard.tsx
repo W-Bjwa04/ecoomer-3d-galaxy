@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Product } from '../data/products';
-import { Utensils } from 'lucide-react';
+import { ShoppingBasket } from 'lucide-react';
 
 interface ProductCardProps {
   product: Product;
@@ -36,7 +36,7 @@ const ProductCard = ({ product, onClick }: ProductCardProps) => {
         
         <div className="absolute top-3 left-3">
           <span className="inline-flex items-center gap-1 text-xs font-medium px-2.5 py-1 rounded-full bg-accent text-accent-foreground">
-            <Utensils size={12} />
+            <ShoppingBasket size={12} />
             {product.category}
           </span>
         </div>
