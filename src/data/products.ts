@@ -20,133 +20,133 @@ export interface Product {
 export const products: Product[] = [
   {
     id: "1",
-    name: "Modern Lounge Chair",
-    description: "A sleek and comfortable lounge chair with a minimalist design.",
-    price: 599,
-    category: "Furniture",
-    image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    modelPath: "/models/chair.glb", // This would be the path to your 3D model
+    name: "Artisan Chocolate Truffle Box",
+    description: "Handcrafted chocolate truffles with various gourmet fillings in an elegant gift box.",
+    price: 24.99,
+    category: "Desserts",
+    image: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    modelPath: "/models/chocolate_box.glb", // Replace with your actual model path
     details: [
-      "Ergonomic design",
-      "High-quality materials",
-      "Adjustable height",
-      "360° swivel base"
+      "12 premium truffles",
+      "100% organic cacao",
+      "No artificial ingredients",
+      "Gluten-free option available"
     ],
-    material: "Premium leather and aluminum",
-    dimensions: {
-      width: 70,
-      height: 80,
-      depth: 75,
-      unit: "cm"
-    }
-  },
-  {
-    id: "2",
-    name: "Ceramic Vase Collection",
-    description: "Handcrafted ceramic vases in various shapes and sizes.",
-    price: 129,
-    category: "Home Decor",
-    image: "https://images.unsplash.com/photo-1612196808214-b40b6dfde3ea?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    modelPath: "/models/vase.glb",
-    details: [
-      "Handmade ceramics",
-      "Multiple designs available",
-      "Unique textures",
-      "Dishwasher safe"
-    ],
-    material: "Premium ceramic",
+    material: "Dark, milk & white chocolate",
     dimensions: {
       width: 15,
-      height: 30,
+      height: 3,
       depth: 15,
       unit: "cm"
     }
   },
   {
-    id: "3",
-    name: "Minimalist Table Lamp",
-    description: "A beautifully designed table lamp with ambient lighting.",
-    price: 249,
-    category: "Lighting",
-    image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    modelPath: "/models/lamp.glb",
+    id: "2",
+    name: "Sourdough Artisan Bread",
+    description: "Slow-fermented sourdough bread made with organic flour and traditional methods.",
+    price: 8.99,
+    category: "Bakery",
+    image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    modelPath: "/models/bread.glb", // Replace with your actual model path
     details: [
-      "Dimmable LED",
-      "Touch controls",
-      "Energy efficient",
-      "Warm light temperature"
+      "24-hour fermentation",
+      "Stone-baked",
+      "No additives or preservatives",
+      "Crispy crust, soft interior"
     ],
-    material: "Brushed aluminum and frosted glass",
+    material: "Organic wheat flour, water, sea salt",
+    dimensions: {
+      width: 20,
+      height: 12,
+      depth: 20,
+      unit: "cm"
+    }
+  },
+  {
+    id: "3",
+    name: "Premium Cheese Selection",
+    description: "Curated selection of artisanal cheeses from small-batch producers around the world.",
+    price: 32.50,
+    category: "Dairy",
+    image: "https://images.unsplash.com/photo-1452195100486-9cc805987862?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    modelPath: "/models/cheese.glb", // Replace with your actual model path
+    details: [
+      "4 different varieties",
+      "Includes pairing guide",
+      "Award-winning selections",
+      "Perfect for entertaining"
+    ],
+    material: "Various milk types (cow, goat, sheep)",
     dimensions: {
       width: 25,
-      height: 45,
+      height: 5,
       depth: 25,
       unit: "cm"
     }
   },
   {
     id: "4",
-    name: "Wireless Bluetooth Speaker",
-    description: "Premium audio speaker with sleek design and powerful sound.",
-    price: 179,
-    category: "Electronics",
-    image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    modelPath: "/models/speaker.glb",
+    name: "Organic Berry Mix",
+    description: "Fresh, seasonal organic berries packaged at peak ripeness for maximum flavor.",
+    price: 6.99,
+    category: "Fruits",
+    image: "https://images.unsplash.com/photo-1596591868231-05e678c7c130?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    modelPath: "/models/berries.glb", // Replace with your actual model path
     details: [
-      "360° sound",
-      "20-hour battery life",
-      "Water resistant",
-      "Voice assistant compatible"
+      "Strawberries, blueberries, raspberries",
+      "Pesticide-free",
+      "Locally sourced when available",
+      "High in antioxidants"
     ],
-    material: "Aircraft-grade aluminum and fabric",
+    material: "100% organic mixed berries",
     dimensions: {
-      width: 10,
-      height: 15,
-      depth: 10,
-      unit: "cm"
-    }
-  },
-  {
-    id: "5",
-    name: "Leather Messenger Bag",
-    description: "Handcrafted leather bag perfect for work and everyday use.",
-    price: 349,
-    category: "Accessories",
-    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    modelPath: "/models/bag.glb",
-    details: [
-      "Full-grain leather",
-      "Adjustable strap",
-      "Multiple compartments",
-      "Laptop sleeve"
-    ],
-    material: "Premium full-grain leather",
-    dimensions: {
-      width: 40,
-      height: 30,
+      width: 12,
+      height: 5,
       depth: 12,
       unit: "cm"
     }
   },
   {
-    id: "6",
-    name: "Smart Digital Watch",
-    description: "Feature-packed smartwatch with elegant design and health tracking.",
-    price: 299,
-    category: "Wearables",
-    image: "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    modelPath: "/models/watch.glb",
+    id: "5",
+    name: "Gourmet Olive Oil Set",
+    description: "Collection of cold-pressed extra virgin olive oils from Mediterranean groves.",
+    price: 45.00,
+    category: "Pantry",
+    image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    modelPath: "/models/oil_bottles.glb", // Replace with your actual model path
     details: [
-      "Heart rate monitor",
-      "GPS tracking",
-      "5-day battery life",
-      "Water resistant to 50m"
+      "3 varieties: Mild, Medium, Robust",
+      "First cold pressing only",
+      "Acidity level < 0.3%",
+      "Sealed glass bottles"
     ],
-    material: "Stainless steel and sapphire glass",
+    material: "100% extra virgin olive oil",
     dimensions: {
-      width: 4.5,
-      height: 1.2,
-      depth: 4.5,
+      width: 30,
+      height: 20,
+      depth: 10,
+      unit: "cm"
+    }
+  },
+  {
+    id: "6",
+    name: "Macarons Gift Box",
+    description: "Delicate French macarons in assorted flavors, beautifully presented in a luxury gift box.",
+    price: 28.99,
+    category: "Desserts",
+    image: "https://images.unsplash.com/photo-1558326567-98ae2405596b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    modelPath: "/models/macarons.glb", // Replace with your actual model path
+    details: [
+      "12 macarons, 6 flavors",
+      "Made with almond flour",
+      "Natural colorings only",
+      "48-hour resting period for perfect texture"
+    ],
+    material: "Almond flour, egg whites, sugar",
+    dimensions: {
+      width: 20,
+      height: 5,
+      depth: 20,
       unit: "cm"
     }
   }

@@ -27,7 +27,8 @@ export const useThreeScene = ({ modelPath, containerRef }: UseThreeSceneProps) =
     try {
       // Create scene
       const scene = new THREE.Scene();
-      scene.background = new THREE.Color(0xf8f8f8);
+      const isDarkMode = document.documentElement.classList.contains('dark');
+      scene.background = new THREE.Color(isDarkMode ? 0x1a1814 : 0xf8f8f2);
       sceneRef.current = scene;
       
       // Create camera
@@ -46,6 +47,7 @@ export const useThreeScene = ({ modelPath, containerRef }: UseThreeSceneProps) =
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.outputColorSpace = THREE.SRGBColorSpace;
       renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
       containerRef.current.appendChild(renderer.domElement);
       rendererRef.current = renderer;
       
@@ -53,19 +55,51 @@ export const useThreeScene = ({ modelPath, containerRef }: UseThreeSceneProps) =
       const controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
       controls.dampingFactor = 0.05;
+      controls.maxPolarAngle = Math.PI / 1.5;
+      controls.minDistance = 2;
+      controls.maxDistance = 10;
       controlsRef.current = controls;
       
       // Add lights
-      const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
       scene.add(ambientLight);
       
-      const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-      directionalLight.position.set(1, 1, 1);
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 1.2);
+      directionalLight.position.set(5, 5, 5);
+      directionalLight.castShadow = true;
+      directionalLight.shadow.mapSize.width = 2048;
+      directionalLight.shadow.mapSize.height = 2048;
       scene.add(directionalLight);
       
-      const backLight = new THREE.DirectionalLight(0xffffff, 0.5);
-      backLight.position.set(-1, 0.5, -1);
+      const backLight = new THREE.DirectionalLight(0xffffff, 0.8);
+      backLight.position.set(-5, 3, -5);
       scene.add(backLight);
+      
+      // Add spotlight for dramatic effect
+      const spotLight = new THREE.SpotLight(0xffffff, 1);
+      spotLight.position.set(0, 10, 0);
+      spotLight.angle = Math.PI / 6;
+      spotLight.penumbra = 0.2;
+      spotLight.decay = 2;
+      spotLight.distance = 50;
+      spotLight.castShadow = true;
+      scene.add(spotLight);
+      
+      // Create a subtle environment map
+      const hemiLight = new THREE.HemisphereLight(0xffffff, 0x8d8d8d, 0.5);
+      scene.add(hemiLight);
+      
+      // Add a simple circular platform for the food to rest on
+      const platformGeometry = new THREE.CylinderGeometry(2, 2, 0.1, 32);
+      const platformMaterial = new THREE.MeshStandardMaterial({ 
+        color: isDarkMode ? 0x2c2c2c : 0xf0f0f0,
+        roughness: 0.8,
+        metalness: 0.2
+      });
+      const platform = new THREE.Mesh(platformGeometry, platformMaterial);
+      platform.position.y = -1;
+      platform.receiveShadow = true;
+      scene.add(platform);
       
       // Handle resize
       const handleResize = () => {
@@ -77,6 +111,19 @@ export const useThreeScene = ({ modelPath, containerRef }: UseThreeSceneProps) =
       };
       
       window.addEventListener('resize', handleResize);
+      
+      // Track theme changes
+      const themeObserver = new MutationObserver(() => {
+        if (!sceneRef.current) return;
+        const isDarkMode = document.documentElement.classList.contains('dark');
+        sceneRef.current.background = new THREE.Color(isDarkMode ? 0x1a1814 : 0xf8f8f2);
+        
+        if (platform) {
+          platformMaterial.color.set(isDarkMode ? 0x2c2c2c : 0xf0f0f0);
+        }
+      });
+      
+      themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
       
       // Load model
       loadModel(modelPath);
@@ -102,6 +149,7 @@ export const useThreeScene = ({ modelPath, containerRef }: UseThreeSceneProps) =
       
       return () => {
         window.removeEventListener('resize', handleResize);
+        themeObserver.disconnect();
         
         if (frameIdRef.current) {
           cancelAnimationFrame(frameIdRef.current);
@@ -137,12 +185,26 @@ export const useThreeScene = ({ modelPath, containerRef }: UseThreeSceneProps) =
     
     // For demo purposes, we're using a placeholder model path
     // In a real application, you would use actual model files
+    // Replace this with your GLB model paths for edible products
     const demoModelPath = 'https://threejs.org/examples/models/gltf/DamagedHelmet/glTF/DamagedHelmet.gltf';
     
+    // IMPORTANT NOTE: To use your own GLB models, you need to:
+    // 1. Place your .glb files in the public/models/ directory
+    // 2. Update the modelPath property for each product in src/data/products.ts to point to your model files
+    // For example: modelPath: "/models/chocolate_box.glb"
+    
     loader.load(
-      demoModelPath,
+      demoModelPath, // Replace with path in production
       (gltf) => {
         const model = gltf.scene;
+        
+        // Enable shadows for all meshes
+        model.traverse((node) => {
+          if (node instanceof THREE.Mesh) {
+            node.castShadow = true;
+            node.receiveShadow = true;
+          }
+        });
         
         // Center model
         const box = new THREE.Box3().setFromObject(model);
@@ -176,7 +238,7 @@ export const useThreeScene = ({ modelPath, containerRef }: UseThreeSceneProps) =
       },
       (error) => {
         console.error('Error loading model:', error);
-        setError('Failed to load 3D model');
+        setError('Failed to load 3D model. Please make sure your GLB models are in the public/models/ directory.');
         setIsLoading(false);
       }
     );

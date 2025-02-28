@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Product } from '../data/products';
-import { X } from 'lucide-react';
+import { X, Utensils, Apple, Clock, Scale } from 'lucide-react';
 import ThreeViewer from './ThreeViewer';
 
 interface ProductModalProps {
@@ -18,12 +18,12 @@ const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       <div 
-        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+        className="absolute inset-0 bg-background/60 dark:bg-foreground/30 backdrop-blur-md"
         onClick={onClose}
       />
       
       <div 
-        className="relative bg-background rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-hidden animate-scale-in"
+        className="relative bg-card rounded-xl shadow-xl max-w-4xl w-full max-h-[90vh] overflow-hidden animate-scale-in"
         onClick={(e) => e.stopPropagation()}
       >
         {showThreeViewer ? (
@@ -38,17 +38,18 @@ const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) => {
           </div>
         ) : (
           <div className="flex flex-col md:flex-row h-full">
-            <div className="md:w-1/2 h-64 md:h-auto">
+            <div className="md:w-1/2 h-64 md:h-auto relative group">
               <img 
                 src={product.image} 
                 alt={product.name} 
                 className="w-full h-full object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             
             <div className="md:w-1/2 p-6 md:p-8 overflow-y-auto max-h-[70vh]">
               <button 
-                className="absolute top-4 right-4 p-2 rounded-full bg-black/10 hover:bg-black/20 transition-colors"
+                className="absolute top-4 right-4 p-2 rounded-full bg-secondary hover:bg-secondary/80 transition-colors"
                 onClick={onClose}
               >
                 <X size={20} />
@@ -56,21 +57,37 @@ const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) => {
               
               <div className="space-y-6">
                 <div>
-                  <span className="inline-block px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary text-secondary-foreground mb-2">
+                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-accent text-accent-foreground mb-2">
+                    <Utensils size={12} />
                     {product.category}
                   </span>
-                  <h2 className="text-2xl md:text-3xl font-medium">{product.name}</h2>
-                  <p className="text-xl font-medium mt-1">${product.price}</p>
+                  <h2 className="text-2xl md:text-3xl font-bold">{product.name}</h2>
+                  <p className="text-xl font-medium mt-1 text-primary">${product.price}</p>
                 </div>
                 
                 <p className="text-muted-foreground">{product.description}</p>
+                
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="flex flex-col items-center justify-center p-3 rounded-lg bg-secondary/50">
+                    <Apple size={20} className="mb-1 text-primary" />
+                    <span className="text-xs text-muted-foreground">Natural</span>
+                  </div>
+                  <div className="flex flex-col items-center justify-center p-3 rounded-lg bg-secondary/50">
+                    <Clock size={20} className="mb-1 text-primary" />
+                    <span className="text-xs text-muted-foreground">Fresh</span>
+                  </div>
+                  <div className="flex flex-col items-center justify-center p-3 rounded-lg bg-secondary/50">
+                    <Scale size={20} className="mb-1 text-primary" />
+                    <span className="text-xs text-muted-foreground">Quality</span>
+                  </div>
+                </div>
                 
                 <div>
                   <h4 className="text-sm font-medium mb-2">Details</h4>
                   <ul className="space-y-1">
                     {product.details.map((detail, index) => (
                       <li key={index} className="text-sm flex items-center gap-2">
-                        <span className="w-1 h-1 rounded-full bg-foreground/70"></span>
+                        <span className="w-1 h-1 rounded-full bg-primary"></span>
                         {detail}
                       </li>
                     ))}
@@ -79,11 +96,11 @@ const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) => {
                 
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div>
-                    <h4 className="font-medium mb-1">Material</h4>
+                    <h4 className="font-medium mb-1">Ingredients</h4>
                     <p className="text-muted-foreground">{product.material}</p>
                   </div>
                   <div>
-                    <h4 className="font-medium mb-1">Dimensions</h4>
+                    <h4 className="font-medium mb-1">Size</h4>
                     <p className="text-muted-foreground">
                       {product.dimensions.width} × {product.dimensions.height} × {product.dimensions.depth} {product.dimensions.unit}
                     </p>
@@ -92,10 +109,10 @@ const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) => {
                 
                 <div className="pt-4">
                   <button 
-                    className="button-primary w-full"
+                    className="button-primary w-full flex items-center justify-center gap-2"
                     onClick={() => setShowThreeViewer(true)}
                   >
-                    View in 3D
+                    <span>View in 3D</span>
                   </button>
                 </div>
               </div>

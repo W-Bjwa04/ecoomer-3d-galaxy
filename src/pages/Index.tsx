@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { products, Product } from '../data/products';
 import ProductCard from '../components/ProductCard';
 import ProductModal from '../components/ProductModal';
+import { ThemeToggle } from '../components/ThemeToggle';
+import { ShoppingBag } from 'lucide-react';
 
 const Index = () => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
@@ -18,17 +20,27 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
-      <header className="container mx-auto py-12 md:py-16 text-center">
+    <div className="min-h-screen bg-background">
+      <header className="sticky top-0 z-40 bg-background/80 backdrop-blur-md border-b border-border">
+        <div className="container mx-auto flex items-center justify-between py-4">
+          <div className="flex items-center gap-2">
+            <ShoppingBag className="text-primary" size={24} />
+            <h2 className="text-xl font-bold">FoodCraft</h2>
+          </div>
+          <ThemeToggle />
+        </div>
+      </header>
+
+      <div className="container mx-auto py-12 md:py-16 text-center">
         <div className="max-w-2xl mx-auto space-y-4">
-          <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-secondary text-secondary-foreground animate-fade-in opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
+          <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-accent text-accent-foreground animate-fade-in opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
             Premium Collection
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight animate-fade-in opacity-0" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
-            Explore Our Products
+            Delicious Treats
           </h1>
           <p className="text-muted-foreground animate-fade-in opacity-0" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
-            Discover our curated collection of premium products with detailed 3D views
+            Explore our delectable collection of premium edible products with detailed 3D views
           </p>
         </div>
       </header>
