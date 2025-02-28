@@ -25,7 +25,7 @@ const Index = () => {
         <div className="container mx-auto flex items-center justify-between py-4">
           <div className="flex items-center gap-2">
             <ShoppingCart className="text-primary" size={24} />
-            <h2 className="text-xl font-bold">GrocerEase</h2>
+            <h2 className="text-xl font-bold">Grocery Express</h2>
           </div>
           <ThemeToggle />
         </div>
@@ -34,19 +34,19 @@ const Index = () => {
       <div className="container mx-auto py-12 md:py-16 text-center">
         <div className="max-w-2xl mx-auto space-y-4">
           <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-accent text-accent-foreground animate-fade-in opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
-            Fresh Selection
+            Popular Brands
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight animate-fade-in opacity-0" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
-            Premium Grocery Items
+            Your Favorite Grocery Items
           </h1>
           <p className="text-muted-foreground animate-fade-in opacity-0" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
-            Browse our selection of high-quality grocery products with interactive 3D previews
+            Browse our selection of popular snacks and beverages with interactive 3D previews
           </p>
         </div>
       </div>
 
       <main className="container mx-auto px-4 pb-16">
-        <div className="product-grid animate-fade-in opacity-0" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 animate-fade-in opacity-0" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
           {products.map((product) => (
             <ProductCard
               key={product.id}

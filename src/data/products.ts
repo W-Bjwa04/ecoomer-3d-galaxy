@@ -20,107 +20,107 @@ export interface Product {
 export const products: Product[] = [
   {
     id: "1",
-    name: "Organic Chocolate Assortment",
-    description: "Premium assorted chocolates made with organic cacao and natural ingredients.",
-    price: 24.99,
-    category: "Confectionery",
-    image: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    modelPath: "/models/chocolate_box.glb", // Place your model in public/models/
+    name: "Lays Classic Potato Chips",
+    description: "Crispy, thinly sliced potato chips with the perfect amount of salt for a satisfying crunch.",
+    price: 3.99,
+    category: "Snacks",
+    image: "https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    modelPath: "/models/chips.glb", // Place your model in public/models/
     details: [
-      "12 premium chocolates",
-      "100% organic cacao",
-      "No artificial ingredients",
-      "Gluten-free option available"
+      "8oz family size bag",
+      "Made with real potatoes",
+      "No artificial flavors",
+      "Perfect for parties"
     ],
-    material: "Dark, milk & white chocolate",
+    material: "Potatoes, vegetable oil, salt",
     dimensions: {
-      width: 15,
-      height: 3,
-      depth: 15,
+      width: 10,
+      height: 25,
+      depth: 5,
       unit: "cm"
     }
   },
   {
     id: "2",
-    name: "Artisanal Sourdough Bread",
-    description: "Freshly baked sourdough bread made with organic flour and traditional methods.",
-    price: 8.99,
-    category: "Bakery",
-    image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    modelPath: "/models/bread.glb", // Place your model in public/models/
+    name: "Coca-Cola Classic",
+    description: "The original cola soft drink that's been refreshing the world since 1886.",
+    price: 1.99,
+    category: "Beverages",
+    image: "https://images.unsplash.com/photo-1554866585-cd94860890b7?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    modelPath: "/models/cola.glb", // Place your model in public/models/
     details: [
-      "24-hour fermentation",
-      "Stone-baked",
-      "No additives or preservatives",
-      "Crispy crust, soft interior"
+      "20oz bottle",
+      "Classic cola taste",
+      "Served best when cold",
+      "America's favorite soda"
     ],
-    material: "Organic wheat flour, water, sea salt",
+    material: "Carbonated water, high fructose corn syrup, caramel color, phosphoric acid, natural flavors, caffeine",
     dimensions: {
-      width: 20,
-      height: 12,
-      depth: 20,
+      width: 8,
+      height: 25,
+      depth: 8,
       unit: "cm"
     }
   },
   {
     id: "3",
-    name: "Gourmet Cheese Selection",
-    description: "Hand-selected premium cheeses from small farms and artisanal producers.",
-    price: 32.50,
-    category: "Dairy",
-    image: "https://images.unsplash.com/photo-1452195100486-9cc805987862?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    modelPath: "/models/cheese.glb", // Place your model in public/models/
+    name: "Sprite Lemon-Lime Soda",
+    description: "Crisp, refreshing and clean-tasting lemon-lime flavored soft drink that quenches your thirst.",
+    price: 1.79,
+    category: "Beverages",
+    image: "https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    modelPath: "/models/sprite.glb", // Place your model in public/models/
     details: [
-      "4 different varieties",
-      "Includes pairing guide",
-      "Award-winning selections",
-      "Perfect for entertaining"
+      "16.9oz bottle",
+      "Caffeine-free",
+      "Lemon-lime flavor",
+      "Crisp, clean taste"
     ],
-    material: "Various milk types (cow, goat, sheep)",
+    material: "Carbonated water, high fructose corn syrup, citric acid, natural flavors, sodium citrate",
     dimensions: {
-      width: 25,
-      height: 5,
-      depth: 25,
+      width: 7,
+      height: 22,
+      depth: 7,
       unit: "cm"
     }
   },
   {
     id: "4",
-    name: "Fresh Organic Berry Mix",
-    description: "Seasonal organic berries, freshly picked and carefully packaged for maximum freshness.",
-    price: 6.99,
-    category: "Produce",
-    image: "https://images.unsplash.com/photo-1596591868231-05e678c7c130?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    modelPath: "/models/berries.glb", // Place your model in public/models/
+    name: "Doritos Nacho Cheese",
+    description: "Bold, nacho cheese flavored tortilla chips that pack a punch with every bite.",
+    price: 4.49,
+    category: "Snacks",
+    image: "https://images.unsplash.com/photo-1600952899395-ad99e4a99a8e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    modelPath: "/models/chips.glb", // Place your model in public/models/
     details: [
-      "Strawberries, blueberries, raspberries",
-      "Pesticide-free",
-      "Locally sourced when available",
-      "High in antioxidants"
+      "9.75oz bag",
+      "Bold nacho cheese flavor",
+      "Made with real cheese",
+      "Perfect movie night snack"
     ],
-    material: "100% organic mixed berries",
+    material: "Corn, vegetable oil, cheese seasoning",
     dimensions: {
-      width: 12,
-      height: 5,
-      depth: 12,
+      width: 10,
+      height: 28,
+      depth: 5,
       unit: "cm"
     }
   },
   {
     id: "5",
-    name: "Premium Extra Virgin Olive Oil",
-    description: "Cold-pressed extra virgin olive oil from Mediterranean olive groves.",
-    price: 18.50,
-    category: "Pantry",
-    image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    modelPath: "/models/oil_bottle.glb", // Place your model in public/models/
+    name: "Mountain Dew",
+    description: "Bright citrus flavor with a refreshing charge that keeps you energized and ready for anything.",
+    price: 1.89,
+    category: "Beverages",
+    image: "https://images.unsplash.com/photo-1622766815178-641bef2615de?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    modelPath: "/models/soda.glb", // Place your model in public/models/
     details: [
-      "First cold pressed",
-      "Acidity level < 0.3%",
-      "Robust flavor profile",
-      "Glass bottle for freshness"
+      "20oz bottle",
+      "Caffeine-enhanced",
+      "Citrus flavor",
+      "Gaming fuel"
     ],
-    material: "100% extra virgin olive oil",
+    material: "Carbonated water, high fructose corn syrup, citric acid, natural and artificial flavor, sodium benzoate, caffeine",
     dimensions: {
       width: 8,
       height: 25,
@@ -130,23 +130,23 @@ export const products: Product[] = [
   },
   {
     id: "6",
-    name: "Gourmet Macaron Collection",
-    description: "Authentic French macarons in assorted flavors, made with premium ingredients.",
-    price: 28.99,
-    category: "Bakery",
-    image: "https://images.unsplash.com/photo-1558326567-98ae2405596b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    modelPath: "/models/macarons.glb", // Place your model in public/models/
+    name: "Cheetos Crunchy",
+    description: "Crunchy, cheese-flavored snacks that leave your fingers deliciously orange.",
+    price: 3.99,
+    category: "Snacks",
+    image: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    modelPath: "/models/snack.glb", // Place your model in public/models/
     details: [
-      "12 macarons, 6 flavors",
-      "Made with almond flour",
-      "Natural colorings only",
-      "Perfect texture and flavor"
+      "8.5oz bag",
+      "Dangerously cheesy",
+      "Made with real cheese",
+      "Crunchy texture"
     ],
-    material: "Almond flour, egg whites, sugar",
+    material: "Enriched corn meal, vegetable oil, cheese seasoning",
     dimensions: {
-      width: 20,
-      height: 5,
-      depth: 20,
+      width: 10,
+      height: 26,
+      depth: 5,
       unit: "cm"
     }
   }

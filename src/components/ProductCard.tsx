@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Product } from '../data/products';
-import { ShoppingBasket } from 'lucide-react';
+import { ShoppingBasket, ShoppingCart } from 'lucide-react';
 
 interface ProductCardProps {
   product: Product;
@@ -13,7 +13,7 @@ const ProductCard = ({ product, onClick }: ProductCardProps) => {
 
   return (
     <div
-      className="product-card rounded-xl overflow-hidden bg-card hover-lift"
+      className="product-card rounded-xl overflow-hidden bg-card hover-lift shadow-md border border-border/20"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => onClick(product)}
@@ -48,7 +48,8 @@ const ProductCard = ({ product, onClick }: ProductCardProps) => {
             opacity: isHovered ? 1 : 0
           }}
         >
-          <button className="w-full py-2 rounded-lg bg-primary/90 text-primary-foreground text-sm font-medium backdrop-blur-sm hover:bg-primary transition-colors">
+          <button className="w-full py-2 rounded-lg bg-primary/90 text-primary-foreground text-sm font-medium backdrop-blur-sm hover:bg-primary transition-colors flex items-center justify-center gap-2">
+            <ShoppingCart size={16} />
             View Details
           </button>
         </div>
@@ -56,10 +57,10 @@ const ProductCard = ({ product, onClick }: ProductCardProps) => {
       
       <div className="p-4 space-y-2">
         <div className="flex items-center justify-between">
-          <span className="text-sm text-primary font-medium">${product.price}</span>
+          <span className="text-sm text-primary font-medium">${product.price.toFixed(2)}</span>
           {product.material && (
             <span className="text-xs px-2 py-1 rounded-full bg-secondary/80 text-secondary-foreground">
-              {product.material}
+              {product.category}
             </span>
           )}
         </div>
