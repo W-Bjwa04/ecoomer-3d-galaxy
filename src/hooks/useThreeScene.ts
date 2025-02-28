@@ -183,18 +183,13 @@ export const useThreeScene = ({ modelPath, containerRef }: UseThreeSceneProps) =
     
     const loader = new GLTFLoader();
     
-    // For demo purposes, we're using a placeholder model path
-    // In a real application, you would use actual model files
-    // Replace this with your GLB model paths for edible products
-    const demoModelPath = 'https://threejs.org/examples/models/gltf/DamagedHelmet/glTF/DamagedHelmet.gltf';
+    // Use the provided model path directly instead of the demo model
+    const actualModelPath = path;
     
-    // IMPORTANT NOTE: To use your own GLB models, you need to:
-    // 1. Place your .glb files in the public/models/ directory
-    // 2. Update the modelPath property for each product in src/data/products.ts to point to your model files
-    // For example: modelPath: "/models/chocolate_box.glb"
+    console.log('Loading 3D model from path:', actualModelPath);
     
     loader.load(
-      demoModelPath, // Replace with path in production
+      actualModelPath,
       (gltf) => {
         const model = gltf.scene;
         
@@ -238,7 +233,7 @@ export const useThreeScene = ({ modelPath, containerRef }: UseThreeSceneProps) =
       },
       (error) => {
         console.error('Error loading model:', error);
-        setError('Failed to load 3D model. Please make sure your GLB models are in the public/models/ directory.');
+        setError('Failed to load 3D model. Please check the model path and make sure your GLB files are in the public/models/ directory.');
         setIsLoading(false);
       }
     );

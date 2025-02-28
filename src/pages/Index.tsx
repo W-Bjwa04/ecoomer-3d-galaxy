@@ -43,7 +43,7 @@ const Index = () => {
             Explore our delectable collection of premium edible products with detailed 3D views
           </p>
         </div>
-      </header>
+      </div>
 
       <main className="container mx-auto px-4 pb-16">
         <div className="product-grid animate-fade-in opacity-0" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
